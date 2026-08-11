@@ -1,3 +1,5 @@
+//Write a program in C to remove duplicate elements from a sorted integer array in-place 
+//using the two-pointer technique and print the resulting unique elements.
 #include<stdio.h>
 int main(){
     int arr[]={4,4,4,6,6,8,9,9};
