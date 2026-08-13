@@ -26,7 +26,7 @@ public:
     {
         if (!isFull())
         {
-            if (isEmpty)
+            if (isEmpty())
             {
                 front = 0;
                 rear = 0;
