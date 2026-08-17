@@ -20,31 +20,28 @@ Space Complexity: O(n)
 #include <stack>
 using namespace std;
 
-int main()
-{
-    int arr[] = {100, 80, 60, 70, 60, 75, 85};
-    int n = sizeof(arr)/sizeof(arr[0]);
-
-    stack<int> st;
-
-    for (int i = 0; i < n; i++)
-    {
-        int ans;
-
-        while (!st.empty() && arr[i] >= arr[st.top()])
-        {
+void calculateSpan(int arr[],int n){
+    stack<int>st;
+    
+    for(int i=0;i<n;i++){
+        int span;
+        while(!st.empty()&&arr[i]>arr[st.top()]){
             st.pop();
         }
-
-        if (st.empty())
-            ans = i + 1;
+        
+        if(st.empty())
+                span = i+1;
         else
-            ans = i - st.top();
-
-        cout << arr[i] << " -> " << ans << endl;
+                span = i-st.top();
+        
+        cout << arr[i] << " -> " << span << endl;
 
         st.push(i);
     }
-
+}
+int main(){
+    int arr[] = {100,80,60,70,60,75,85};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    calculateSpan(arr,n);
     return 0;
 }
