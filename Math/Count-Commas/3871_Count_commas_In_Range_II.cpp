@@ -1,0 +1,39 @@
+/**
+ * Problem: Number of Commas in Standard Number Formatting
+ * Complexity:
+ *   - Time: O(log_{1000}(n)) ≈ O(1)
+ *   - Space: O(1)
+ */
+
+#include <iostream>
+#include <climits>
+
+using namespace std;
+
+class Solution {
+public:
+    long long countCommas(long long n) {
+        long long total = 0;
+        long long threshold = 1000;
+
+        while (n >= threshold) {
+            total += (n - threshold + 1);
+
+            // Guard against signed 64-bit overflow before multiplication
+            if (threshold > LLONG_MAX / 1000) {
+                break;
+            }
+            threshold *= 1000;
+        }
+
+        return total;
+    }
+};
+
+int main() {
+    Solution sol;
+    cout << "Test 1 (n = 1002): " << sol.countCommas(1002) << " (Expected: 3)" << endl;
+    cout << "Test 2 (n = 998):  " << sol.countCommas(998) << " (Expected: 0)" << endl;
+    cout << "Test 3 (n = 1000000000000000): " << sol.countCommas(1000000000000000LL) << endl;
+    return 0;
+}
