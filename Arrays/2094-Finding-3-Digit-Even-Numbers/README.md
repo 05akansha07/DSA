@@ -53,8 +53,8 @@ Explanation: No even 3-digit numbers can be formed.
 
 ## Constraints
 
-3 <= digits.length <= 10
-0 <= digits[i] <= 9
+- $3 \le \text{digits.length} \le 10$
+- $0 \le \text{digits}[i] \le 9$
 
 ---
 
