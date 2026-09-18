@@ -50,7 +50,7 @@ Whenever two prefix sums yield the exact same remainder modulo $k$, the elements
 
 1. **Handling Negative Remainders in C++:**  
    In C++, the `%` operator on negative numbers preserves the sign (e.g., `-2 % 5 = -2`). To normalize into the non-negative range $[0, k - 1]$:
-   $$\text{rem} = ((\text{current\_sum} \pmod k) + k) \pmod k$$
+   $$\text{rem} = ((\text{currentSum} \pmod k) + k) \pmod k$$
 
 2. **Fixed Frequency Array:**  
    Since remainders modulo $k$ strictly lie in $[0, k - 1]$ and $k \le 10^4$, a fixed-size `vector<int> remainder_count(k, 0)` is faster and lighter than an `unordered_map`.
