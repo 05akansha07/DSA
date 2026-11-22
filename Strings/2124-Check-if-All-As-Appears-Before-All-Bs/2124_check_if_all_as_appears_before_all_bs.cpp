@@ -8,19 +8,31 @@ static const int fast_io = []() {
     cin.tie(NULL);
     return 0;
 }();
-
+// 1st approach
+// class Solution {
+// public:
+//     bool checkString(const string& s) {
+//         int n = s.length();
+//         for (int i = 1; i < n; i++) {
+//             if (s[i - 1] == 'b' && s[i] == 'a') {
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+// };
 class Solution {
 public:
-    bool checkString(const string& s) {
-        int n = s.length();
-        for (int i = 1; i < n; i++) {
-            if (s[i - 1] == 'b' && s[i] == 'a') {
+    bool checkString(string s) {
+        int count_a = count(s.begin(),s.end(),'a');
+        for(int i = 0; i < count_a; i++){
+            if(s[i] != 'a')
                 return false;
-            }
         }
         return true;
     }
 };
+
 
 int main() {
     Solution solver;
